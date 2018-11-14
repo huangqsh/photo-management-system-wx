@@ -1,0 +1,14 @@
+<!--pages/musicplay/musicplay.wxml-->
+
+<!-- audio.wxml -->
+<view class="wrapper">
+     <audio poster="{{musicPlay.poster}}" name="{{musicPlay.name}}" author="{{musicPlay.author}}" src="{{musicPlay.src}}" id="myAudio" bindended="auto" controls ></audio>
+
+</view>
+
+
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>
+<button type="primary" bindtap="audioPre">上一首</button>
+<button type="primary" bindtap="audioNext">下一首</button>
+<button type="primary" bindtap="audioStart">回到开头</button>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "照片上传",
+    "usingComponents": {
+        "wux-row": "../../../dist/row/index",
+        "wux-col": "../../../dist/col/index",
+        "wux-upload": "../../../dist/upload/index"
+    }
+}

@@ -1,0 +1,5 @@
+/* pages/musicplay/musicplay.wxss */
+.wrapper{
+    padding-left:8px;
+    margin:0 auto;
+}

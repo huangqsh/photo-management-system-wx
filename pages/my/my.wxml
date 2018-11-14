@@ -1,0 +1,50 @@
+<!--pages/my/my.wxml-->
+
+<view class="header">
+  <view class='background'>
+    {{!hasUserInfo && canIUse}}
+  </view>
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view class='detail'>
+  <view class='detail-base'>
+    <view class="detail-item">
+      <image class="base-img" src='./img/wx.png' width="20rpx"/>
+      <text>nfpwyqz</text>
+    </view>
+    <view class="detail-item">
+      <image class="base-img" src='./img/wx.png' width="20rpx"/>
+      <text>{{userInfo.genderStr}}  {{userInfo.country}} {{userInfo.city}}</text>
+    </view>
+    <view class="detail-item">
+      <image class="base-img" src='./img/wx.png' width="20rpx"/>
+      <text>学生</text>
+    </view>
+  </view>
+  <view class='line-css'></view>
+  <view class='detail-activity'>
+    <view class="detail-item">
+      <image class="base-img" src='./img/wx.png' width="20rpx"/>
+      <text>我的动态</text>
+    </view>
+    <view class='active-view'>
+      <image src='./img/wx.png' mode='aspectFill' class='active-img'></image>
+      <image src='./img/chimney12.jpg' mode='aspectFill' class='active-img'></image>
+      <image src='./img/chimney12.jpg' mode='aspectFill' class='active-img'></image>
+      <image src='./img/chimney12.jpg' mode='aspectFill' class='active-img'></image>
+      <image src='./img/chimney12.jpg' mode='aspectFill' class='active-img'></image>
+    </view>
+  </view>
+  <view class='detail-works'>
+    <view class="detail-item">
+      <image class="base-img" src='./img/wx.png' width="20rpx"/>
+      <text>精选作品</text>
+    </view>
+  </view>
+</view>
+
+
+

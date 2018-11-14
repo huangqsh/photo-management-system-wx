@@ -1,0 +1,31 @@
+<view id="typeId" style="display:none"></view>
+
+<view style="display:none">
+  <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.url}}" bindload="onImageLoad"></image>
+</view>
+<view wx:if="{{allCount==0}}">你还没有上传图片</view>
+
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+  <view style="width:100%">
+    <view class="img_item">
+      <view wx:for="{{col1}}" wx:key="id">
+        <image src="{{item.url}}" style="width:100%;height:{{item.height}}px" bindtap="show" data-src="{{item.url}}"></image>
+      </view>
+    </view>
+    <view class="img_item">
+      <view wx:for="{{col2}}" wx:key="id">
+        <image src="{{item.url}}" style="width:100%;height:{{item.height}}px"  bindtap="show" data-src="{{item.url}}"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!--圆形点击框  -->
+<navigator url='/pages/photo/uploadPhoto/upload?id={{albumId}}'>
+    <view class="round-click">
+        <view bindtap='addPhoto' >上传照片</view>
+    </view>
+</navigator>
+
+
+

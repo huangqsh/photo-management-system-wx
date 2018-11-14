@@ -1,0 +1,28 @@
+<!--pages/mv/mv.wxml-->
+
+<view class="section tc">
+  <video id="myVideo" src="{{mvPlay.src}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls poster="{{mvPlay.poster}}" style="width:100%;"></video>
+  <view class="btn-area danmu"> 
+    <input bindblur="bindInputBlur" class="input" 
+    placeholder="快笑她，哈哈hahaha" />  
+    <view bindtap="bindSendDanmu" class="send">发送      </view> 
+    
+  </view>
+  <!--  <button bindtap="bindButtonTap">播放本地视频</button>  -->
+<scroll-view scroll-y="true" style="height: {{scrolly}}">  
+  <view class="mvList">
+     <view wx:for="{{mvList}}" wx:key="{{item.id}}" class="item" id="{{item.id}}" bindtap="play">
+        <view class="poster">
+          <image src="{{item.poster}}"></image>
+        </view>
+        <view class="name_wrapper">
+          <view class="name">{{item.name}}</view>
+          <view class="author">{{item.author}}</view>
+        </view>
+        
+        
+    </view>
+  </view>
+  </scroll-view>
+</view>
+

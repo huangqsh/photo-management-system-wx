@@ -1,0 +1,71 @@
+<!--pages/music/music.wxml-->
+
+<scroll-view scroll-y="true" style="height: {{scrolly}}">
+    <view wx:for="{{photoList}}" wx:key="{{item.id}}" class="item" bindlongpress='updateAlbum' bindtap="tap" id="{{item.id}}">
+        <view bindtap='detail'>
+            <view class="poster">
+                <image src="{{item.poster}}" class="poster_img"></image>
+            </view>
+            <view class="describe">
+                <view class="name">{{item.name}}</view>
+                <view class="author">作者：{{item.authorName}}<text class='text-font'>{{item.createDate}}</text></view>
+            </view>
+            <!-- <icon type="download" size="20" class="download"/> -->
+        </view>
+    </view>
+</scroll-view>
+<!--圆形点击框  -->
+<view class="round-click">
+   <view bindtap='addAlbum' >添加影集</view>
+</view>
+
+<!-- 添加影集 -->
+<view class="dialog {{ showCenterDialog ? 'dialog--show' : '' }}">
+    <view class="dialog__mask"/>
+     <view class="dialog__container" style="display:flex;align-items:center;justify-content:center;flex-direction:column;"> 
+
+        <!--  //此区域自定义视图  -->
+        <view class="flex_Center" style="width:600rpx;height:900rpx;background:white;color:#333;font-size:40rpx;border-radius:20rpx;">
+            <view class="weui-cell">
+                <view class="page__title">添加影集</view>
+            </view>
+            <form class='add-album-form' bindsubmit="albumFormSubmit" bindreset="onClickCancelCenterView">
+              <view class="weui-cells__title"></view>
+              <view class='weui-cells content weui-cells_after-title'>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">影集名</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="name" class="weui-input" value='{{album.name}}' placeholder="请输入影集名"/>
+                        <input name="id" style="display:none" class="weui-input" value="{{album.id}}"/>
+                    </view>
+                </view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_switch">
+                        <view class="weui-cell__bd">是否公开</view>
+                        <view class="weui-cell__ft">
+                            <switch checked='{{album.isPublic}}' name="isPublic"/>
+                        </view>
+                    </view>
+                </view>
+                <view class='weui-cell'>
+                    <view class="weui-uploader__title">封面</view>
+                </view>
+                <view class="weui-cell">
+                  <view class="weui-uploader__input-box ">
+                       <view class="weui-uploader__file">
+                          <image class="weui-uploader__img" src="{{image.src}}" mode="aspectFill"/>
+                      </view>
+                      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+              <view class='button-sp-area page__bd page__bd_spacing'style='width:60%;margin:0 auto;'>
+                <button class="weui-btn mini-btn" type="primary" size="mini" form-type="submit" style='margin-right:6px'>确定</button>
+                <button class="weui-btn mini-btn" type="default" size="mini"  form-type="reset">取消</button>
+              </view>
+            </form>
+        </view>
+    </view> 
+  </view>

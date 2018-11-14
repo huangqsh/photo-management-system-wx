@@ -1,0 +1,55 @@
+/* pages/mv/mv.wxss */
+.mvList{
+    display:flex;
+    flex-wrap: wrap;
+    padding:20rpx 30rpx;
+}
+.item{
+    justify-content:space-around;
+    width:40%;
+    padding:20rpx 33rpx;
+}
+.poster image{
+    display:block;
+    width:100%;
+    height:198rpx;
+}
+.name_wrapper{
+    background:blanchedalmond;
+    border-radius:0 0 6px 6px; 
+}
+.name{
+    padding-top:12px;
+    color:darkgreen;
+    overflow: hidden;
+    height: 60rpx;
+}
+.author{
+    padding-bottom:4px;
+    font:14px/20px "";
+    color:maroon;
+    overflow: hidden;
+    height: 20px;
+}
+input{
+    display: block;
+    margin:0 auto;
+    width:80%;
+    height:70rpx;
+    border:1px solid blanchedalmond;
+    border-radius:30rpx;
+}
+.danmu{
+    position:relative;
+    margin:20rpx;
+
+}
+.send{
+    position:absolute;
+    right:72rpx;
+    top:0rpx;
+    background:#ccc;
+    font:20px/70rpx "";
+    border-radius: 0 30rpx 30rpx 0;
+    color:aliceblue;
+}

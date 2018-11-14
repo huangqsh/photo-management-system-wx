@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wxLogin/wxLogin",
+    "pages/mv/mv",
+    "pages/photo/photo",
+    "pages/my/my",
+    "pages/musicplay/musicplay",
+    "pages/photo/photoDetail/detail",
+    "pages/photo/uploadPhoto/upload"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#afa",
+    "navigationBarTitleText": "小镜界",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#bfbfbf",
+    "selectedColor": "#2cc515",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./public/img/icon/home.png",
+        "selectedIconPath": "./public/img/icon/home_s.png"
+      },
+      {
+        "pagePath": "pages/photo/photo",
+        "text": "影集",
+        "iconPath": "./public/img/icon/photo.png",
+        "selectedIconPath": "./public/img/icon/photo_s.png"
+      },
+      {
+        "pagePath": "pages/mv/mv",
+        "text": "MV",
+        "iconPath": "./public/img/icon/mv.png",
+        "selectedIconPath": "./public/img/icon/mv_s.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./public/img/icon/my.png",
+        "selectedIconPath": "./public/img/icon/my_s.png"
+      }
+    ]
+  }
+}
