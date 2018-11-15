@@ -4,6 +4,7 @@ var Data = require('./utils/util.js');
 App({
     globalData: {
         userInfo: null,
+        login_user_id: '',
         header: { 'Cookie': '' }
     },
     onLaunch: function () {
@@ -18,6 +19,7 @@ App({
             var value = wx.getStorageSync('user');
             if (value) {
                 this.globalData.userInfo = value;
+                this.globalData.login_user_id = value.id;
             } else {
                 wx.redirectTo({
                     url: '/pages/wxLogin/wxLogin',
@@ -51,6 +53,7 @@ App({
                             if (result.data.data){
                                 console.log(result.data.data, "登陆成功")
                                 that.globalData.userInfo = result.data.data;
+                                that.globalData.login_user_id = result.data.data.id;
                                 typeof func == "function" && func(that.globalData.userInfo)
                                 that.globalData.header = { 'Cookie': 'JSESSIONID=' + result.data.message };
                                 //第一访问小程序，需要注册信息到数据库
@@ -96,7 +99,7 @@ App({
             method: 'POST',
             header: that.globalData.header,
             success: function (res) {
-
+                //注册成功应该返回用户id，并记录到全局变量中
             }
         })
     },

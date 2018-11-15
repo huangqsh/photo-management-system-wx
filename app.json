@@ -4,10 +4,10 @@
     "pages/wxLogin/wxLogin",
     "pages/mv/mv",
     "pages/photo/photo",
-    "pages/my/my",
     "pages/musicplay/musicplay",
     "pages/photo/photoDetail/detail",
-    "pages/photo/uploadPhoto/upload"
+    "pages/photo/uploadPhoto/upload",
+    "pages/userinfo/userinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,11 +39,17 @@
         "selectedIconPath": "./public/img/icon/mv_s.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/userinfo/userinfo",
         "text": "我的",
         "iconPath": "./public/img/icon/my.png",
         "selectedIconPath": "./public/img/icon/my_s.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 50000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
   }
 }

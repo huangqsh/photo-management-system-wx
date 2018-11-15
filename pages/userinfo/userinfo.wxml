@@ -1,0 +1,62 @@
+<!--pages/person/person.wxml-->
+<view class='head-box'>
+  <view class='head-top'>
+    <view class='head-left'>
+      <image class='head-img' src='{{avatar}}'></image>
+      <view class='head-name'>{{ name }}</view>
+      <view wx:if="{{describe}}"class='head-info'>{{describe}}</view>
+      <view wx:else class='head-info'>这个人很懒，什么也没留下</view>
+      <view class='head-profile'><text>{{address}}</text><text>{{sex}}</text><text>{{age}}</text></view>
+    </view>
+    <view class='head-right'>
+      <view class='right-btn'>
+        <button class='attention-btn' bindtap='attenPerson' hidden='{{fansShow}}'>关注</button>
+        <button class='attention-btn attention-img' bindtap='cancleAtten' hidden='{{!fansShow}}'><image src='/images/already.png'></image></button>
+      </view>
+    </view>
+  </view>
+  <view class='head-mess'>
+    <view>获赞<text>({{love}})</text></view>
+    <view bindtap='toFans' data-id='{{userinfoid}}'>粉丝<text>({{fans}})</text></view>
+    <view bindtap='toAtten' data-id='{{userinfoid}}'>关注<text>({{atten}})</text></view>
+  </view>
+  <view class='head-label'>
+    <view class='label-box'>
+      <text class='label-item' wx:for="{{labelArr}}" wx:key="">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='person-content'>
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="person-item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+    {{item.name}} <text>({{item.num}})</text>
+  </view>
+</view>
+
+<view class='nav-box' hidden="{{currentTab!=0}}">
+  <view class='content-item' wx:for="{{photoArr}}" wx:key="">
+    <image src='{{item.src[0]}}' data-id='{{index}}' mode='widthFix' bindtap='previewImg'></image>
+  </view>
+</view> 
+
+<view class='nav-box' hidden="{{currentTab!=1}}">
+  <view class='content-item' wx:for="{{collectArr}}" bindtap='toFavorite' data-id='{{item.object_id}}'  wx:key="">
+    <image src='{{item.src[0]}}' mode='widthFix'></image>
+    <view class='item-layer'><image src='/images/play.png'></image>{{item.num}}</view>
+  </view>
+</view> 
+  
+<view class='nav-box' hidden="{{currentTab!=2}}">
+  <view class='content-item' wx:for="{{worksArr}}" bindtap='toDetail' data-id='{{item.id}}'  wx:key="">
+    <image src='{{item.src}}' url='{{item.url}}' mode='widthFix'></image>
+    <view class='item-layer'><image src='/images/play.png'></image>{{item.num}}</view>
+  </view>
+</view> 
+
+<view class='fix-box-shadow' bindtap='closeShow' hidden='{{!show}}'></view>
+<view class='fix-setting-box' hidden='{{!show}}'>
+  <image src='/images/close.png' bindtap='closeShow'></image>
+  <navigator url='/pages/personInfo/personInfo'>个人信息</navigator>
+  <navigator url='/pages/Instructions/Instructions'>使用说明</navigator>
+  <navigator url='/pages/userAgreement/userAgreement'>用户协议</navigator>
+</view>
